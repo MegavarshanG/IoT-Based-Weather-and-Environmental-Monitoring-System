@@ -1,0 +1,27 @@
+#include "dht_sensor.h"
+#include "mpu6050_sensor.h"
+#include "config.h"
+
+void setup() {
+  Serial.begin(9600);
+  dht_setup();
+  mpu_setup();
+  pinMode(LDR_PIN, INPUT);
+  pinMode(SOUND_PIN, INPUT);
+}
+
+void loop() {
+  int ldrValue = analogRead(LDR_PIN);
+  Serial.print("Day/Night: ");
+  Serial.println(ldrValue > LIGHT_THRESHOLD ? "Day" : "Night");
+
+  read_temperature();
+
+  int soundValue = analogRead(SOUND_PIN);
+  Serial.print("Sound Level: ");
+  Serial.println(soundValue);
+
+  detect_earthquake();
+
+  delay(1000);
+}

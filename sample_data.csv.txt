@@ -1,0 +1,4 @@
+Timestamp, Light Level, Temperature, Sound Level, Earthquake Detected
+2024-12-05 10:00, Day, 25.3, 230, No
+2024-12-05 10:05, Night, 24.8, 300, No
+2024-12-05 10:10, Day, 26.0, 500, Yes

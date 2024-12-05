@@ -1,0 +1,9 @@
+# Project Overview
+
+This IoT project aims to provide real-time environmental monitoring using multiple sensors. The project detects:
+- Light levels to determine day or night.
+- Room temperature using a DHT11/DHT22 sensor.
+- Sound levels using a KY-037 sensor.
+- Earthquake activity using MPU6050 accelerometer.
+
+The system is designed for efficient monitoring and potential IoT integration.

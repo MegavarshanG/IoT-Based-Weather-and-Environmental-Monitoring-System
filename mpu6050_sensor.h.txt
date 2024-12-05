@@ -1,0 +1,22 @@
+#include <Wire.h>
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+
+Adafruit_MPU6050 mpu;
+
+void mpu_setup() {
+  if (!mpu.begin()) {
+    Serial.println("MPU6050 not detected!");
+    while (1);
+  }
+}
+
+void detect_earthquake() {
+  sensors_event_t a, g, temp_event;
+  mpu.getEvent(&a, &g, &temp_event);
+  if (abs(a.acceleration.x) > 1.5 || abs(a.acceleration.y) > 1.5 || abs(a.acceleration.z) > 1.5) {
+    Serial.println("Earthquake Detected!");
+  } else {
+    Serial.println("No significant movement.");
+  }
+}

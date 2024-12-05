@@ -1,0 +1,12 @@
+# Components and Connections
+
+## Components
+- **Microcontroller**: Arduino Uno or ESP32
+- **Sensors**:
+  - LDR for light detection
+  - DHT11 for temperature monitoring
+  - KY-037 for sound level detection
+  - MPU6050 for earthquake monitoring
+
+## Connections
+- Refer to the circuit diagram in `images/circuit_diagram.png`.

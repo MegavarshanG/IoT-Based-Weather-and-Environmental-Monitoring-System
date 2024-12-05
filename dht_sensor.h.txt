@@ -1,0 +1,21 @@
+#include <DHT.h>
+
+#define DHT_PIN 2
+#define DHT_TYPE DHT11
+
+DHT dht(DHT_PIN, DHT_TYPE);
+
+void dht_setup() {
+  dht.begin();
+}
+
+void read_temperature() {
+  float temperature = dht.readTemperature();
+  if (isnan(temperature)) {
+    Serial.println("DHT Sensor Error!");
+  } else {
+    Serial.print("Temperature: ");
+    Serial.print(temperature);
+    Serial.println(" °C");
+  }
+}
